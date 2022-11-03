@@ -58,7 +58,11 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_041A6484D17F4A0FBDE4D4FBA14C2915 }}
           package: .
+      - name: npm install, build
+        run: |
+          npm install
+          npm run build
       - name: Install dependencies
         uses: php-actions/composer@v6
         with:
-          command: 'composer require xvladqt/faker-lorem-flickr; composer require jeroennoten/laravel-adminlte ; php artisan adminlte:install -n; composer require laravel/breeze --dev; php artisan breeze:install;npm install; npm run dev'
+          command: 'require xvladqt/faker-lorem-flickr; require jeroennoten/laravel-adminlte ; composer require laravel/breeze --dev'
