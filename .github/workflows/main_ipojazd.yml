@@ -65,4 +65,4 @@ jobs:
       - name: Install dependencies
         uses: php-actions/composer@v6
         with:
-          command: 'require xvladqt/faker-lorem-flickr; require jeroennoten/laravel-adminlte ; composer require laravel/breeze --dev'
+          command: 'composer require xvladqt/faker-lorem-flickr; composer require jeroennoten/laravel-adminlte ; composer require laravel/breeze --dev'
