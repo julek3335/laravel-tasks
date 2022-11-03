@@ -64,6 +64,6 @@ jobs:
 #           args: 'composer require xvladqt/faker-lorem-flickr'
       - name: npm install, build
         run: |
-          cd /home/site/wwwroot
+          cd /site/wwwroot
           npm install
           npm run build
