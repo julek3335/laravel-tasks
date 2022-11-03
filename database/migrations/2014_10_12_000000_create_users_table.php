@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\Company;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -16,9 +17,16 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('last_name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('driving_licence_category')->default('B');
+            $table->string('status',30)->default('free');
+            $table->integer('auth_level')->default(0);
+            $table->string('photo')->nullable();
+            $table->string('notification')->nullable();
+            $table->foreignIdFor(Company::class)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -33,4 +41,4 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
     }
-}
+};
