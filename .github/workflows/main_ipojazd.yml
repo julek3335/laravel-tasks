@@ -61,7 +61,7 @@ jobs:
       - name: Install dependencies
         uses: php-actions/composer@v6
         with:
-          args: 'require xvladqt/faker-lorem-flickr'
+          args: 'composer require xvladqt/faker-lorem-flickr'
       - name: npm install, build
         run: |
           npm install
