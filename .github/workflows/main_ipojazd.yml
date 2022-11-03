@@ -59,7 +59,7 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_041A6484D17F4A0FBDE4D4FBA14C2915 }}
           package: .
       - name: Install dependencies
-        uses: MilesChou/composer-action@v1.0.2
+        uses: php-actions/composer@v6
         with:
           args: 'require xvladqt/faker-lorem-flickr'
       - name: npm install, build
