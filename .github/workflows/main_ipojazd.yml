@@ -64,5 +64,5 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_041A6484D17F4A0FBDE4D4FBA14C2915 }}
           package: .
-      - name: Migrate
-        run: php artisan migrate:fresh
+#      - name: Migrate
+#        run: php artisan migrate:fresh
