@@ -30,6 +30,12 @@ jobs:
       - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
+        
+      - name: npm install, build
+        run: |
+          pwd
+          npm install
+          npm run build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -62,8 +68,3 @@ jobs:
 #         uses: php-actions/composer@v6
 #         with:
 #           args: 'composer require xvladqt/faker-lorem-flickr'
-      - name: npm install, build
-        run: |
-          pwd
-          npm install
-          npm run build
